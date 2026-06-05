@@ -13,36 +13,21 @@ public class Main{
             if (operation.equalsIgnoreCase("Стереть")){
                 StaticCalculator.clear();
                 System.out.println("Результат = 0");
-                
             }
-
-
             System.out.print("Введите число: ");
             double number = scanner.nextDouble();
             System.out.println("Выберите операцию");
             operation = scanner.next();
-            switch (operation) {
-                case "+":
-                    StaticCalculator.add(number);
-                    break;
+            if(operation.equalsIgnoreCase("+")){
+                StaticCalculator.add(number, operation);
+            }else if(operation.equalsIgnoreCase("*")){
+                StaticCalculator.multiply(number,operation);
+            }else if(operation.equalsIgnoreCase("/")){
+                StaticCalculator.divide(number,operation);
+            }else if(operation.equalsIgnoreCase("-")){
 
-                case "-":
-                    StaticCalculator.subtract(number);
-                    break;
-
-                case "*":
-                    StaticCalculator.multiply(number);
-                    break;
-
-                case "/":
-                    StaticCalculator.divide(number);
-                    break;
-
-                default:
-                    System.out.println("Неизвестная операция!");
-                    continue;
+                StaticCalculator.subtract(number, operation);
             }
-
             System.out.println("Результат = " + StaticCalculator.getResult());
 
             System.out.print("Продолжить? (да/нет): ");
@@ -52,9 +37,7 @@ public class Main{
                 work = false;
             }
         }
-
         System.out.println("Программа завершена.");
-
     }
 }
 
