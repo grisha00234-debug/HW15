@@ -14,19 +14,20 @@ public class Main{
                 StaticCalculator.clear();
                 System.out.println("Результат = 0");
             }
-            System.out.print("Введите число: ");
-            double number = scanner.nextDouble();
+            System.out.print("Введите первое число: ");
+            double numberA = scanner.nextDouble();
+            System.out.print("Введите второе число: ");
+            double numderB = scanner.nextDouble();
             System.out.println("Выберите операцию");
             operation = scanner.next();
             if(operation.equalsIgnoreCase("+")){
-                StaticCalculator.add(number, operation);
+                StaticCalculator.add(numberA, numderB);
             }else if(operation.equalsIgnoreCase("*")){
-                StaticCalculator.multiply(number,operation);
+                StaticCalculator.multiply(numberA,numderB);
             }else if(operation.equalsIgnoreCase("/")){
-                StaticCalculator.divide(number,operation);
+                StaticCalculator.divide(numberA,numderB);
             }else if(operation.equalsIgnoreCase("-")){
-
-                StaticCalculator.subtract(number, operation);
+                StaticCalculator.subtract(numberA, numderB);
             }
             System.out.println("Результат = " + StaticCalculator.getResult());
 
